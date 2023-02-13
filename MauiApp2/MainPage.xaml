@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2.MainPage"
+             Title="MainPage"
+             Shell.NavBarIsVisible="True"
+             >
+ <ContentPage.Content>
+
+        <ContentView>
+            <ContentView.Resources>
+                <ResourceDictionary>
+                    <Style x:Key="ProfileSettingLabel" TargetType="Label">
+                        <Setter Property="FontSize" Value="16" />
+                        <Setter Property="FontFamily" Value="Proxima Nova" />
+                        <Setter Property="HorizontalOptions" Value="Start" />
+                    </Style>
+                   
+                    <Style x:Key="ProfileSettingSwitch" TargetType="Switch">
+                        <Setter Property="HorizontalOptions" Value="End" />
+                        <Setter Property="Margin" Value="0,5,10,0" />
+
+                    </Style>
+                </ResourceDictionary>
+            </ContentView.Resources>
+
+            <VerticalStackLayout>
+
+               
+
+                <AbsoluteLayout Margin="{OnPlatform iOS='0,20,0,0'}" >
+
+                    <Label Text="Switch Demo" 
+                           Margin="16,14,0,0"
+                           Style="{StaticResource ProfileSettingLabel}"/>
+                    <Switch Style="{StaticResource ProfileSettingSwitch}" 
+                            ThumbColor="{OnPlatform Android='#0969D9', iOS='#FFFFFF',                           WinUI='#FFFFFF'}"     
+                            OnColor="#0969D9"
+                            AbsoluteLayout.LayoutBounds="0.7,0,60,35"
+                            AbsoluteLayout.LayoutFlags="XProportional,YProportional" 
+                            Toggled="OnLocationSwitchToggled"
+                            IsVisible="{OnPlatform Android='True',iOS='True',WinUI='True'}"/>
+
+                   
+
+                </AbsoluteLayout>
+
+              
+
+            </VerticalStackLayout>
+        </ContentView>
+    </ContentPage.Content>
+</ContentPage>
